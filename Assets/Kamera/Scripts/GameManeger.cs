@@ -11,11 +11,12 @@ public class GameManeger : MonoBehaviour
 {
     public State GameState { get; private set; }
     float startTime = 3, gameTime = 60, count;
-    bool isARView;//AR用の画像が移っているかの判定用のbool(いらないかも)
+    [SerializeField]
+    private Stage stage;
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(State.start);
+        ChangeState(State.wait);
     }
 
     // Update is called once per frame
@@ -24,8 +25,11 @@ public class GameManeger : MonoBehaviour
         if (GameState == State.wait)
         {
             //最初はwait、Stage表示後にStartへ
-
-            ChangeState(State.start);
+            if (stage.RenderStage)
+            {
+                count = startTime;
+                ChangeState(State.start);
+            }
         }
         if (GameState == State.start)
         {
@@ -64,6 +68,7 @@ public class GameManeger : MonoBehaviour
     bool TimeCount(ref float time)
     {
         time -= Time.deltaTime;
+        Debug.Log(time);
         if (time <= 0)
         {
             return true;

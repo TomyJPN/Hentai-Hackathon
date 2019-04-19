@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793cf53aac7f6a4409e312bfce19c963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: {fileID: 1597524998}
 --- !u!4 &80430583
 Transform:
   m_ObjectHideFlags: 0
@@ -947,7 +948,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 73d201b28861c1842aece1fcfb3ddc4e, type: 3}
       propertyPath: m_Name
-      value: MoguratatakiDodai
+      value: Stage
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 73d201b28861c1842aece1fcfb3ddc4e, type: 3}
       propertyPath: m_TagString
@@ -1222,6 +1223,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.999998, y: 2.5195408, z: 20}
   m_Center: {x: 0.0077524185, y: -0.07250333, z: -5.695e-42}
+--- !u!114 &1597524998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597524996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a25a8931145fc409c461fa3b06c308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 1597524997}
 --- !u!1 &1607795785
 GameObject:
   m_ObjectHideFlags: 0
