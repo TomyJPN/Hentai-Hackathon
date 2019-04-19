@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class UIManeger : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject equipment;
+    [SerializeField]
+    private GameObject[] weapon = new GameObject[3];
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +29,7 @@ public class Player : MonoBehaviour
             if (hit.transform.gameObject.tag == "Enemy")
             {
                 //敵への攻撃、animation呼び出し
-                Debug.Log("");
+                Debug.Log("hit!");
             }
         }
     }

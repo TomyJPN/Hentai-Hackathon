@@ -24,6 +24,7 @@ public class GameManeger : MonoBehaviour
         if (GameState == State.wait)
         {
             //最初はwait、Stage表示後にStartへ
+
             ChangeState(State.start);
         }
         if (GameState == State.start)
