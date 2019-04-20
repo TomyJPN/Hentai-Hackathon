@@ -13,6 +13,8 @@ public class GameManeger : MonoBehaviour
     float startTime = 3, gameTime = 60, count;
     [SerializeField]
     private Stage stage;
+    [SerializeField]
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class GameManeger : MonoBehaviour
         if (GameState == State.wait)
         {
             //最初はwait、Stage表示後にStartへ
-            if (stage.RenderStage)
+            if (stage.RenderStage && player.IsEquip)
             {
                 count = startTime;
                 ChangeState(State.start);

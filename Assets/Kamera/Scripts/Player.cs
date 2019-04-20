@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private GameObject ARcamera, equipment;
+    private GameObject ARcamera;
     [SerializeField]
-    private GameObject[] weapon = new GameObject[3];
+    private Weapon[] weapon = new Weapon[3];
+    private Weapon equipment;
+    public bool IsEquip { get; private set; }
 
     private int score;
     // Start is called before the first frame update
@@ -20,13 +22,38 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckWeapon();
+    }
 
+    private void CheckWeapon()
+    {
+        foreach (var item in weapon)
+        {
+            if (item.RenderWeapon)
+            {
+                if (equipment == null)
+                {
+                    equipment = item;
+                    break;
+                }
+            }
+            if (equipment != null)
+            {
+                IsEquip = false;
+                equipment = null;
+            }
+        }
     }
 
     public void OnShot()
     {
+        if (equipment == null)
+        {
+            Debug.Log("equipment is null");
+            return;
+        }
         RaycastHit hit;
-        if (Physics.Raycast(ARcamera.transform.position, ARcamera.transform.forward, out hit, Mathf.Infinity))
+        if (Physics.SphereCast(ARcamera.transform.position, equipment.raysize, ARcamera.transform.forward, out hit, Mathf.Infinity))
         {
             if (hit.transform.gameObject.tag == "target")
             {
@@ -46,5 +73,10 @@ public class Player : MonoBehaviour
                 Debug.Log(score);
             }
         }
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
