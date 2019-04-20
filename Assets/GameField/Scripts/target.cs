@@ -9,22 +9,29 @@ public class target : MonoBehaviour {
   public bool moveX=true;
   public bool moveY=false;
   public bool moveZ=false;
+
+  private float scale = 1;  //全体のスケール
   //-----------------------------------
 
+  private GameObject parent;  
   private Vector3 firstPos;
   private GameObject child; //表示消してもスクリプトを生かすために子を作ってる(いいやり方か知らんが)
 
   // Start is called before the first frame update
   void Start() {
+    parent = this.transform.parent.parent.gameObject;
     firstPos = this.transform.position;
     child = this.transform.GetChild(0).gameObject;
   }
 
   // Update is called once per frame
   void Update() {
-    if (moveX) transform.position = new Vector3(firstPos.x + Mathf.Sin(Time.frameCount * speed) * size, transform.position.y, transform.position.z);
-    if (moveY)transform.position = new Vector3(transform.position.x, firstPos.y + Mathf.Sin(Time.frameCount * speed)*size, transform.position.z);
-    if (moveZ) transform.position = new Vector3(transform.position.x, transform.position.y, firstPos.z + Mathf.Sin(Time.frameCount * speed) * size);
+    scale = parent.transform.localScale.x;
+    Debug.Log(scale);
+    float rev = size * scale; //補正
+    if (moveX) transform.position = new Vector3(firstPos.x + Mathf.Sin(Time.frameCount * speed) * rev, transform.position.y , transform.position.z);
+    if (moveY)transform.position = new Vector3(transform.position.x, firstPos.y + Mathf.Sin(Time.frameCount * speed)*rev, transform.position.z);
+    if (moveZ) transform.position = new Vector3(transform.position.x, transform.position.y, firstPos.z + Mathf.Sin(Time.frameCount * speed) * rev);
   }
 
   //ターゲットに射撃が当たった時に呼び出す関数(引数：参照渡しでスコア)
