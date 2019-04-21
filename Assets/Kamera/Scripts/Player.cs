@@ -14,13 +14,13 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        equipment = weapon[0];
+        //equipment = weapon[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        //CheckWeapon();
+        CheckWeapon();
     }
 
     private void CheckWeapon()
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
                 if (equipment == null)
                 {
                     equipment = item;
+                    IsEquip = true;
                     break;
                 }
             }
