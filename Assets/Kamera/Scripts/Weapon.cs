@@ -9,6 +9,10 @@ public class Weapon : MonoBehaviour
     private Collider col;
     public float raysize = 0.5f;//Rayのサイズ
     public bool RenderWeapon { get; private set; }
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private string animationName;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +25,10 @@ public class Weapon : MonoBehaviour
         if (col.enabled) { RenderWeapon = true; }
         else { RenderWeapon = false; }
         Debug.Log(RenderWeapon);
+    }
+
+    public void PlayAnimation()
+    {
+        animator.Play(animationName);
     }
 }

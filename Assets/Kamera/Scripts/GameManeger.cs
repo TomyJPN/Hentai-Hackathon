@@ -19,6 +19,7 @@ public class GameManeger : MonoBehaviour
     void Start()
     {
         ChangeState(State.wait);
+        ScoreManeger.ResetScore();
     }
 
     // Update is called once per frame

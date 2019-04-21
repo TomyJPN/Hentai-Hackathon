@@ -11,24 +11,23 @@ public class Player : MonoBehaviour
     private Weapon[] weapon = new Weapon[3];
     private Weapon equipment;
     public bool IsEquip { get; private set; }
-
-    private int score;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        equipment = weapon[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckWeapon();
+        //CheckWeapon();
     }
 
     private void CheckWeapon()
     {
         foreach (var item in weapon)
         {
+            if (item == null) continue;
             if (item.RenderWeapon)
             {
                 if (equipment == null)
@@ -52,17 +51,21 @@ public class Player : MonoBehaviour
             Debug.Log("equipment is null");
             return;
         }
+        ScoreManeger.shotCount++;
+        equipment.PlayAnimation();
         RaycastHit hit;
         if (Physics.SphereCast(ARcamera.transform.position, equipment.raysize, ARcamera.transform.forward, out hit, Mathf.Infinity))
         {
             if (hit.transform.gameObject.tag == "target")
             {
+                ScoreManeger.hitCount++;
                 //敵への攻撃、animation呼び出し
                 while (hit.transform.parent)
                 {
                     if (hit.transform.parent.gameObject.GetComponent<target>())
                     {
-                        hit.transform.parent.gameObject.GetComponent<target>().hitTarget(ref score);
+                        hit.transform.parent.gameObject.GetComponent<target>().hitTarget(ref ScoreManeger.score);
+                        Debug.Log("Score = " + ScoreManeger.score);
                         break;
                     }
                     else
@@ -70,13 +73,7 @@ public class Player : MonoBehaviour
                         Debug.Log("Next Parent");
                     }
                 }
-                Debug.Log(score);
             }
         }
-    }
-
-    public int GetScore()
-    {
-        return score;
     }
 }
