@@ -26,7 +26,10 @@ public class ScoreManeger : MonoBehaviour
     void ScoreView()
     {
         scoreText.text = score.ToString();
-        timeText.text = gameManeger.GetTimeCount().ToString() + "s";
+        if (gameManeger.GameState == State.isgame)
+        {
+            timeText.text = gameManeger.GetTimeCount().ToString() + "s";
+        }
     }
 
     public static void ResetScore()

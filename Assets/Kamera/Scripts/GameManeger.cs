@@ -11,16 +11,19 @@ public enum State
 public class GameManeger : MonoBehaviour
 {
     public State GameState { get; private set; }
-    float startTime = 3, gameTime = 10, count;
+    float startTime = 3, gameTime = 60, count;
     [SerializeField]
-    private Stage stage;
+    private Stage[] stage = new Stage[2];
     [SerializeField]
     private Player player;
+    [SerializeField]
+    private GameObject startCountAnimation;
     // Start is called before the first frame update
     void Start()
     {
         ChangeState(State.wait);
         ScoreManeger.ResetScore();
+        startCountAnimation.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,12 +31,11 @@ public class GameManeger : MonoBehaviour
     {
         if (GameState == State.wait)
         {
-            Debug.Log(stage.RenderStage);
-            Debug.Log(player.IsEquip);
             //最初はwait、Stage表示後にStartへ
-            if (stage.RenderStage && player.IsEquip)
+            if ((stage[0].RenderStage || stage[1].RenderStage) && player.IsEquip)
             {
                 count = startTime;
+                startCountAnimation.SetActive(true);
                 ChangeState(State.start);
             }
         }
