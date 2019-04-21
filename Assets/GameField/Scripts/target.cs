@@ -27,7 +27,6 @@ public class target : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     scale = parent.transform.localScale.x;
-    Debug.Log(scale);
     float rev = size * scale; //補正
     if (moveX) transform.position = new Vector3(firstPos.x + Mathf.Sin(Time.frameCount * speed) * rev, transform.position.y , transform.position.z);
     if (moveY)transform.position = new Vector3(transform.position.x, firstPos.y + Mathf.Sin(Time.frameCount * speed)*rev, transform.position.z);
