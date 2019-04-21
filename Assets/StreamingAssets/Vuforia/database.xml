@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="A4ySuK51_400x400" size="800.000000 800.000000" />
-    <ImageTarget name="ARtest" size="100.000000 100.628929" />
+    <ImageTarget name="secret" size="680.000000 680.000000" />
+    <ImageTarget name="whip" size="680.000000 680.000000" />
+    <ImageTarget name="syuriken" size="100.000000 100.000000" />
+    <ImageTarget name="hentai_logo2" size="680.000000 633.590515" />
+    <ImageTarget name="gun" size="780.000000 780.000000" />
   </Tracking>
 </QCARConfig>

@@ -60,16 +60,18 @@ public class Player : MonoBehaviour
             {
                 ScoreManeger.hitCount++;
                 //敵への攻撃、animation呼び出し
-                while (hit.transform.parent)
+                Transform hitTransform = hit.transform;
+                while (hitTransform.parent.gameObject != null)
                 {
-                    if (hit.transform.parent.gameObject.GetComponent<target>())
+                    if (hitTransform.parent.gameObject.GetComponent<target>())
                     {
-                        hit.transform.parent.gameObject.GetComponent<target>().hitTarget(ref ScoreManeger.score);
+                        hitTransform.parent.gameObject.GetComponent<target>().hitTarget(ref ScoreManeger.score);
                         Debug.Log("Score = " + ScoreManeger.score);
                         break;
                     }
                     else
                     {
+                        hitTransform = hitTransform.parent;
                         Debug.Log("Next Parent");
                     }
                 }
