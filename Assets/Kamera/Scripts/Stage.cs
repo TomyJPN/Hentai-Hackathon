@@ -18,6 +18,5 @@ public class Stage : MonoBehaviour
     {
         if (col.enabled) { RenderStage = true; }
         else { RenderStage = false; }
-        Debug.Log(RenderStage);
     }
 }

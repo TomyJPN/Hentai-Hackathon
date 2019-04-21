@@ -27,6 +27,8 @@ public class GameManeger : MonoBehaviour
     {
         if (GameState == State.wait)
         {
+            Debug.Log(stage.RenderStage);
+            Debug.Log(player.IsEquip);
             //最初はwait、Stage表示後にStartへ
             if (stage.RenderStage && player.IsEquip)
             {

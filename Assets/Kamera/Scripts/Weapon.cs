@@ -24,7 +24,6 @@ public class Weapon : MonoBehaviour
     {
         if (col.enabled) { RenderWeapon = true; }
         else { RenderWeapon = false; }
-        Debug.Log(RenderWeapon);
     }
 
     public void PlayAnimation()
