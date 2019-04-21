@@ -19,18 +19,18 @@ public class target : MonoBehaviour {
 
   // Start is called before the first frame update
   void Start() {
-    parent = this.transform.parent.parent.gameObject;
-    firstPos = this.transform.position;
+    //parent = this.transform.parent.parent.gameObject;
+    firstPos = this.transform.localPosition;
     child = this.transform.GetChild(0).gameObject;
   }
 
   // Update is called once per frame
   void Update() {
-    scale = parent.transform.localScale.x;
+    //scale = parent.transform.localScale.x;  //入れなくてよくなった
     float rev = size * scale; //補正
-    if (moveX) transform.position = new Vector3(firstPos.x + Mathf.Sin(Time.frameCount * speed) * rev, transform.position.y , transform.position.z);
-    if (moveY)transform.position = new Vector3(transform.position.x, firstPos.y + Mathf.Sin(Time.frameCount * speed)*rev, transform.position.z);
-    if (moveZ) transform.position = new Vector3(transform.position.x, transform.position.y, firstPos.z + Mathf.Sin(Time.frameCount * speed) * rev);
+    if (moveX) transform.localPosition = new Vector3(firstPos.x + Mathf.Sin(Time.frameCount * speed) * rev, transform.localPosition.y , transform.localPosition.z);
+    if (moveY)transform.localPosition = new Vector3(transform.localPosition.x, firstPos.y + Mathf.Sin(Time.frameCount * speed)*rev, transform.localPosition.z);
+    if (moveZ) transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, firstPos.z + Mathf.Sin(Time.frameCount * speed) * rev);
   }
 
   //ターゲットに射撃が当たった時に呼び出す関数(引数：参照渡しでスコア)

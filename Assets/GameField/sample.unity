@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -567,56 +567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: field
       objectReference: {fileID: 0}
-    - target: {fileID: 7562276471856616219, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471856616217, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471242320493, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276470983804773, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471133394733, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471479855842, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471133394735, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 8219325879428204111, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471409879353, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
-    - target: {fileID: 7562276471409879355, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
-        type: 3}
-      propertyPath: m_TagString
-      value: target
-      objectReference: {fileID: 0}
     - target: {fileID: 4109913323435125443, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -675,17 +625,67 @@ PrefabInstance:
     - target: {fileID: 4109913323435125443, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4109913323435125443, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4109913323435125443, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276470983804773, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471242320493, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471133394733, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471133394735, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471409879353, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471409879355, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471479855842, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471856616217, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562276471856616219, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219325879428204111, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
+        type: 3}
+      propertyPath: m_TagString
+      value: target
       objectReference: {fileID: 0}
     - target: {fileID: 2197735186519631212, guid: 5bd1d11e7cb798f40adb40fbcd651cac,
         type: 3}
