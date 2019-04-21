@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //equipment = weapon[0];
+
     }
 
     // Update is called once per frame
@@ -25,22 +25,18 @@ public class Player : MonoBehaviour
 
     private void CheckWeapon()
     {
-        foreach (var item in weapon)
+        for (int i = 0; i < weapon.Length; i++)
         {
-            if (item == null) continue;
-            if (item.RenderWeapon)
+            Debug.Log(weapon[i].RenderWeapon);
+            if (weapon[i].RenderWeapon)
             {
+                Debug.Log(i + "check");
                 if (equipment == null)
                 {
-                    equipment = item;
+                    equipment = weapon[i];
                     IsEquip = true;
                     break;
                 }
-            }
-            if (equipment != null)
-            {
-                IsEquip = false;
-                equipment = null;
             }
         }
     }
@@ -59,6 +55,7 @@ public class Player : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "target")
             {
+                Debug.Log(hit.transform.gameObject);
                 ScoreManeger.hitCount++;
                 //敵への攻撃、animation呼び出し
                 Transform hitTransform = hit.transform;

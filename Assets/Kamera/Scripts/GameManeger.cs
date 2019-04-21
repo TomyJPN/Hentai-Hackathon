@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum State
 {
@@ -10,7 +11,7 @@ public enum State
 public class GameManeger : MonoBehaviour
 {
     public State GameState { get; private set; }
-    float startTime = 3, gameTime = 60, count;
+    float startTime = 3, gameTime = 10, count;
     [SerializeField]
     private Stage stage;
     [SerializeField]
@@ -45,6 +46,10 @@ public class GameManeger : MonoBehaviour
         {
             GameTimeCount();
         }
+        if (GameState == State.end)
+        {
+            SceneManager.LoadScene("Result");
+        }
     }
 
     void ChangeState(State s)
@@ -68,6 +73,11 @@ public class GameManeger : MonoBehaviour
             ChangeState(State.end);
             count = startTime;
         }
+    }
+
+    public int GetTimeCount()
+    {
+        return (int)count;
     }
 
     bool TimeCount(ref float time)
