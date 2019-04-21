@@ -18,7 +18,7 @@ public class result : MonoBehaviour
         int hentai = (int)(score * meityu * 0.81 * 10000 / 877);
         score1.text = "スコア　・・・・・・　" + score.ToString();
         score2.text = "命中率　・・・・・・　" + ((int)meityu).ToString() + "%";
-        score3.text = "変態性　" + hentai.ToString();
+        score3.text = "変態性　" + hentai.ToString() + "\n" + ((meityu < 20) ? "ドM" : "ドS");
     }
 
     // Update is called once per frame
